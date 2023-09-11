@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvironSofwateTest", "AvironSofwateTest\AvironSofwateTest.csproj", "{4AD190C8-5D5B-4FDB-9E3E-CD6375759179}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0170E9BA-0D80-4D72-88DD-21D33DD358A3} = {0170E9BA-0D80-4D72-88DD-21D33DD358A3}
+		{143683F2-533B-4D72-A015-D3F141003886} = {143683F2-533B-4D72-A015-D3F141003886}
+		{FEBFBDD9-08F7-4CB1-8A3E-F3474893114E} = {FEBFBDD9-08F7-4CB1-8A3E-F3474893114E}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{61DAEDB5-1FCB-4CEA-BCA2-E4FF067C5EE4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvironSofwateTest.Data", "AvironSofwateTest.Data\AvironSofwateTest.Data.csproj", "{FEBFBDD9-08F7-4CB1-8A3E-F3474893114E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvironSofwateTest.DataAccess", "AvironSofwateTest.DataAccess\AvironSofwateTest.DataAccess.csproj", "{143683F2-533B-4D72-A015-D3F141003886}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvironSofwateTest.Core", "AvironSofwateTest.Core\AvironSofwateTest.Core.csproj", "{0170E9BA-0D80-4D72-88DD-21D33DD358A3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{143683F2-533B-4D72-A015-D3F141003886} = {143683F2-533B-4D72-A015-D3F141003886}
+		{FEBFBDD9-08F7-4CB1-8A3E-F3474893114E} = {FEBFBDD9-08F7-4CB1-8A3E-F3474893114E}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4AD190C8-5D5B-4FDB-9E3E-CD6375759179}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AD190C8-5D5B-4FDB-9E3E-CD6375759179}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AD190C8-5D5B-4FDB-9E3E-CD6375759179}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AD190C8-5D5B-4FDB-9E3E-CD6375759179}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEBFBDD9-08F7-4CB1-8A3E-F3474893114E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEBFBDD9-08F7-4CB1-8A3E-F3474893114E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEBFBDD9-08F7-4CB1-8A3E-F3474893114E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEBFBDD9-08F7-4CB1-8A3E-F3474893114E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{143683F2-533B-4D72-A015-D3F141003886}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{143683F2-533B-4D72-A015-D3F141003886}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{143683F2-533B-4D72-A015-D3F141003886}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{143683F2-533B-4D72-A015-D3F141003886}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0170E9BA-0D80-4D72-88DD-21D33DD358A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0170E9BA-0D80-4D72-88DD-21D33DD358A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0170E9BA-0D80-4D72-88DD-21D33DD358A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0170E9BA-0D80-4D72-88DD-21D33DD358A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4AD190C8-5D5B-4FDB-9E3E-CD6375759179} = {61DAEDB5-1FCB-4CEA-BCA2-E4FF067C5EE4}
+		{FEBFBDD9-08F7-4CB1-8A3E-F3474893114E} = {61DAEDB5-1FCB-4CEA-BCA2-E4FF067C5EE4}
+		{143683F2-533B-4D72-A015-D3F141003886} = {61DAEDB5-1FCB-4CEA-BCA2-E4FF067C5EE4}
+		{0170E9BA-0D80-4D72-88DD-21D33DD358A3} = {61DAEDB5-1FCB-4CEA-BCA2-E4FF067C5EE4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0547C833-996E-4207-9781-4A661E32D925}
+	EndGlobalSection
+EndGlobal
