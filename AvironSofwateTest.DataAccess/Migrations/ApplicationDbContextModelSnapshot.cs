@@ -28,17 +28,7 @@ namespace AvironSofwateTest.DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("CreatedById")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Operation")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -53,31 +43,16 @@ namespace AvironSofwateTest.DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("CreatedById")
-                        .HasColumnType("int");
-
-                    b.Property<Guid?>("DepartmentId")
+                    b.Property<Guid>("DepartmentId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Operation")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("ReviewId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("Id");
 
                     b.HasIndex("DepartmentId");
-
-                    b.HasIndex("ReviewId");
 
                     b.ToTable("Employees");
                 });
@@ -88,37 +63,39 @@ namespace AvironSofwateTest.DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("CreatedById")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Operation")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("EmployeeId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Rate")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("EmployeeId");
+
                     b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("AvironSofwateTest.Data.Entites.Employee", b =>
                 {
-                    b.HasOne("AvironSofwateTest.Data.Entites.Department", null)
+                    b.HasOne("AvironSofwateTest.Data.Entites.Department", "Department")
                         .WithMany("Employees")
-                        .HasForeignKey("DepartmentId");
-
-                    b.HasOne("AvironSofwateTest.Data.Entites.Review", "Review")
-                        .WithMany()
-                        .HasForeignKey("ReviewId")
+                        .HasForeignKey("DepartmentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Review");
+                    b.Navigation("Department");
+                });
+
+            modelBuilder.Entity("AvironSofwateTest.Data.Entites.Review", b =>
+                {
+                    b.HasOne("AvironSofwateTest.Data.Entites.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
                 });
 
             modelBuilder.Entity("AvironSofwateTest.Data.Entites.Department", b =>

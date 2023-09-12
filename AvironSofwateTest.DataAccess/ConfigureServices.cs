@@ -23,7 +23,6 @@ public static class ConfigureServices
 
         services.AddScoped<ApplicationContextInitialiser>();
 
-        services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         services.AddScoped(typeof(IUnitOfWork<>), typeof(UnitOfWork<>));
         return services;
     }

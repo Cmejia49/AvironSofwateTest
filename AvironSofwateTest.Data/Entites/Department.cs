@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AvironSofwateTest.Data.Entites
 {
-    public class Department : BaseAuditableEntity
+    public class Department : BaseEntity
     {
         public string Name { get; set; }
         public virtual List<Employee> Employees { get; set; }

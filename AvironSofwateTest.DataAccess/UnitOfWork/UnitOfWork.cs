@@ -12,27 +12,19 @@ namespace AvironSofwateTest.DataAccess.UnitOfWork
 {
     public class UnitOfWork<TContext> : IUnitOfWork<TContext> where TContext : DbContext, new()
     {
-
         private readonly Dictionary<Type, object> _repositoryDictionary = new();
-        private IDbContextTransaction _transaction;
 
         protected TContext _context;
         protected bool disposed;
 
-
-        public void Dispose()
+        public UnitOfWork(TContext context)
         {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
+            _context = context;
 
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!disposed && disposing && _context is IDisposable context)
+            if (context == null)
             {
-                context.Dispose();
+                throw new InvalidOperationException("Entity.DbContext instance is expected as a dbContext parameter.");
             }
-            disposed = true;
         }
 
         public IRepository<TEntity> GetEntityRepository<TEntity>() where TEntity : class
@@ -55,5 +47,21 @@ namespace AvironSofwateTest.DataAccess.UnitOfWork
         {
             return _context.SaveChangesAsync(cancellationToken);
         }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposed && disposing && _context is IDisposable context)
+            {
+                context.Dispose();
+            }
+            disposed = true;
+        }
+
     }
 }
