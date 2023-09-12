@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AvironSofwateTest.Core.EmployeeService.Dtos
 {
-    public class ReadEmployeeDto
+    public record ReadEmployeeDto
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

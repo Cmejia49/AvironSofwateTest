@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AvironSofwateTest.Core.ReviewService.Dtos
 {
-    public class CreateReviewDto
+    public record CreateReviewDto
     {
         public int Rate { get; set; }
         public Guid EmployeeId { get; set; }
